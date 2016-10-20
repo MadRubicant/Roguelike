@@ -17,14 +17,15 @@ namespace Roguelike {
         Texture2D FloorTexture;
         Texture2D PlayerTexture;
         GraphicsSystem Renderer;
-        Entity[,] TileMap;
         HashSet<Entity> AllEntities;
+        TileMap Tiles;
+        Point MapSize = new Point(5, 5);
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
             Renderer = new GraphicsSystem();
-            TileMap = new Entity[5, 5];
+            Tiles = new TileMap(5, 5);
             AllEntities = new HashSet<Entity>();
         }
 
@@ -50,16 +51,16 @@ namespace Roguelike {
             WallTexture = CreateTexture(Color.DarkSlateGray, new Point(32, 32));
             FloorTexture = CreateTexture(Color.LightGray, new Point(32, 32));
             PlayerTexture = CreateTexture(Color.Red, new Point(32, 32));
-            // TODO: use this.Content to load your game content here
-            for (int x = 0; x < 5; x++) {
-                for (int y = 0; y < 5; y++) {
-                    if (x == 0 || x == 4 || y == 0 || y == 4)
-                        TileMap[x, y] = Prefabs.Tile(1, new System.Numerics.Vector2(32 * x, 32 * y), WallTexture);
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 5; j++) {
+                    if (i == 0 || j == 0 || i == 4 || j == 4)
+                        Tiles[i, j] = 0;
                     else
-                        TileMap[x, y] = Prefabs.Tile(0, new System.Numerics.Vector2(32 * x, 32 * y), FloorTexture);
-                    AllEntities.Add(TileMap[x, y]);
+                        Tiles[i, j] = 1;
                 }
             }
+            // TODO: use this.Content to load your game content here
+            
 
         }
 
@@ -93,6 +94,15 @@ namespace Roguelike {
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             //spriteBatch.Draw(WallTexture, new Vector2(), Color.White);
+            for (int i = 0; i < MapSize.X; i++) {
+                for (int j = 0; j < MapSize.Y; j++) {
+                    int Tile = Tiles[i, j];
+                    if (Tile == 0)
+                        spriteBatch.Draw(WallTexture, new Vector2(i * 32, j * 32), Color.White);
+                    if (Tile == 1)
+                        spriteBatch.Draw(FloorTexture, new Vector2(i * 32, j * 32), Color.White);
+                }
+            }
             Renderer.Draw(AllEntities, spriteBatch, this.GraphicsDevice.Viewport.Bounds);
             // TODO: Add your drawing code here
 

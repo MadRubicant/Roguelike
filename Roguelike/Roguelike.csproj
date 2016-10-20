@@ -41,7 +41,6 @@
     <Compile Include="Components\Component.cs" />
     <Compile Include="Components\GraphicsComponent.cs" />
     <Compile Include="Components\PositionComponent.cs" />
-    <Compile Include="Components\TileComponent.cs" />
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\Prefabs.cs" />
     <Compile Include="ExtensionMethods.cs" />
@@ -49,6 +48,7 @@
     <Compile Include="GraphicsSystem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TileMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
