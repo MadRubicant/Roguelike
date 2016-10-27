@@ -20,6 +20,7 @@ namespace Roguelike {
         HashSet<Entity> AllEntities;
         TileMap Tiles;
         Point MapSize = new Point(5, 5);
+        Dictionary<int, TileDefinition> TileDefs;
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -27,6 +28,7 @@ namespace Roguelike {
             Renderer = new GraphicsSystem();
             Tiles = new TileMap(5, 5);
             AllEntities = new HashSet<Entity>();
+            TileDefs = new Dictionary<int, TileDefinition>();
         }
 
         /// <summary>
@@ -59,6 +61,21 @@ namespace Roguelike {
                         Tiles[i, j] = 1;
                 }
             }
+            // Temporary
+            TileDefinition Floor = new TileDefinition();
+            Floor.Blocks = false;
+            Floor.ID = 0;
+            Floor.Name = "floor";
+            Floor.Text = FloorTexture;
+            TileDefs.Add(0, Floor);
+
+            TileDefinition Wall = new TileDefinition();
+            Wall.Blocks = true;
+            Wall.ID = 1;
+            Wall.Name = "wall";
+            Wall.Text = WallTexture;
+            TileDefs.Add(1, Wall);
+            AllEntities.Add(Prefabs.Unit(new System.Numerics.Vector2(1, 1), PlayerTexture));
             // TODO: use this.Content to load your game content here
             
 
@@ -96,11 +113,7 @@ namespace Roguelike {
             //spriteBatch.Draw(WallTexture, new Vector2(), Color.White);
             for (int i = 0; i < MapSize.X; i++) {
                 for (int j = 0; j < MapSize.Y; j++) {
-                    int Tile = Tiles[i, j];
-                    if (Tile == 0)
-                        spriteBatch.Draw(WallTexture, new Vector2(i * 32, j * 32), Color.White);
-                    if (Tile == 1)
-                        spriteBatch.Draw(FloorTexture, new Vector2(i * 32, j * 32), Color.White);
+                    spriteBatch.Draw(TileDefs[Tiles[i, j]].Text, new Vector2(32 * i, 32 * j), Color.White);
                 }
             }
             Renderer.Draw(AllEntities, spriteBatch, this.GraphicsDevice.Viewport.Bounds);

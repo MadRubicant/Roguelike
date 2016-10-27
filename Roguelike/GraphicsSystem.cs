@@ -11,6 +11,7 @@ using Roguelike.Components;
 
 namespace Roguelike {
     class GraphicsSystem {
+        int TileScale = 32;
         public void Draw(IEnumerable<Entity> EntList, SpriteBatch spriteBatch, Microsoft.Xna.Framework.Rectangle Camera) {
             var VisibleObjects = from Ent in EntList
                                  where Ent.HasComponent<GraphicsComponent>() && Ent.HasComponent<PositionComponent>()
@@ -21,7 +22,7 @@ namespace Roguelike {
                 var Graphics = Ent.GetComponent<GraphicsComponent>();
                 var Position = Ent.GetComponent<PositionComponent>();
 
-                spriteBatch.Draw(Graphics.Sprite, Position.Position.AsXNA(), Microsoft.Xna.Framework.Color.White);
+                spriteBatch.Draw(Graphics.Sprite, (Position.Position * TileScale).AsXNA(), Microsoft.Xna.Framework.Color.White);
             }           
         }
     }
