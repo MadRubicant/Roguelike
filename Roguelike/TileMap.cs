@@ -28,6 +28,7 @@ namespace Roguelike {
             return EntityPositions[Pos.X, Pos.Y];
         }
 
+        
         public void AddEntityAt(Point Pos, Entity Ent) {
             if (EntityPositions[Pos.X, Pos.Y] == null) {
                 EntityPositions[Pos.X, Pos.Y] = new LinkedList<Entity>();
@@ -64,6 +65,14 @@ namespace Roguelike {
                 }
             }
             InactiveLists = 0;
+        }
+
+        public void MoveEntity(Entity E, Point Source, Point Delta) {
+            var Ents = EntitiesAt(Source);
+            if (!Ents.Contains(E))
+                return;
+            RemoveEntityAt(Source, E);
+            AddEntityAt(Source + Delta, E);
         }
     }
 }

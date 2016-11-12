@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 using Roguelike.Entities;
+using Roguelike.Components;
 
 namespace Roguelike {
     /// <summary>
@@ -21,6 +22,8 @@ namespace Roguelike {
         TileMap Tiles;
         Point MapSize = new Point(5, 5);
         Dictionary<int, TileDefinition> TileDefs;
+        Entity Player;
+        InputHandler MainInputHandler;
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -29,6 +32,7 @@ namespace Roguelike {
             Tiles = new TileMap(5, 5);
             AllEntities = new HashSet<Entity>();
             TileDefs = new Dictionary<int, TileDefinition>();
+            MainInputHandler = new InputHandler();
         }
 
         /// <summary>
@@ -75,7 +79,9 @@ namespace Roguelike {
             Wall.Name = "wall";
             Wall.Text = WallTexture;
             TileDefs.Add(1, Wall);
-            AllEntities.Add(Prefabs.Unit(new System.Numerics.Vector2(1, 1), PlayerTexture));
+            Player = Prefabs.Unit(new System.Numerics.Vector2(1, 1), PlayerTexture);
+            AllEntities.Add(Player);
+            Tiles.AddEntityAt(new Point(1, 1), Player);
             // TODO: use this.Content to load your game content here
             
 
@@ -97,7 +103,10 @@ namespace Roguelike {
         protected override void Update(GameTime gameTime) {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            MainInputHandler.GetInput();
 
+            if (MainInputHandler.ButtonPressed(Keys.Up))
+                Tiles.MoveEntity(Player, Player.GetComponent<PositionComponent>().Position.ToPoint(), new Point(0, -1));
             // TODO: Add your update logic here
 
             base.Update(gameTime);

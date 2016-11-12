@@ -13,5 +13,9 @@ namespace Roguelike {
         public static System.Numerics.Vector2 AsNumerics(this Microsoft.Xna.Framework.Vector2 Vector) {
             return new System.Numerics.Vector2(Vector.X, Vector.Y);
         }
+
+        public static Microsoft.Xna.Framework.Point ToPoint(this System.Numerics.Vector2 Vector) {
+            return new Microsoft.Xna.Framework.Point((int)Vector.X, (int)Vector.Y);
+        }
     }
 }
