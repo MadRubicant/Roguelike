@@ -14,15 +14,14 @@ namespace Roguelike {
         int TileScale = 32;
         public void Draw(IEnumerable<Entity> EntList, SpriteBatch spriteBatch, Microsoft.Xna.Framework.Rectangle Camera) {
             var VisibleObjects = from Ent in EntList
-                                 where Ent.HasComponent<GraphicsComponent>() && Ent.HasComponent<PositionComponent>()
-                                 orderby Ent.GetComponent<PositionComponent>().ZPos
+                                 where Ent.HasComponent<GraphicsComponent>()
+                                 orderby Ent.ZPos
                                  select Ent;
 
             foreach (Entity Ent in VisibleObjects) {
                 var Graphics = Ent.GetComponent<GraphicsComponent>();
-                var Position = Ent.GetComponent<PositionComponent>();
 
-                spriteBatch.Draw(Graphics.Sprite, (Position.Position * TileScale).AsXNA(), Microsoft.Xna.Framework.Color.White);
+                spriteBatch.Draw(Graphics.Sprite, (Ent.Position.ToVector2() * TileScale), Microsoft.Xna.Framework.Color.White);
             }           
         }
     }

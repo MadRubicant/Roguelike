@@ -11,25 +11,36 @@ using Microsoft.Xna.Framework;
 namespace Roguelike {
     class TileMap {
         int[,] TileGrid;
+        Point Bounds;
         LinkedList<Entity>[,] EntityPositions;
         readonly Entity[] EmptyList = { };
         int ActiveLists;
         int InactiveLists;
+        public Dictionary<int, TileDefinition> TileDefs { get; private set; }
+
         public TileMap(int width, int height) {
             TileGrid = new int[width, height];
+            Bounds = new Point(width, height);
             EntityPositions = new LinkedList<Entity>[width, height];
             ActiveLists = 0;
             InactiveLists = 0;
+            TileDefs = new Dictionary<int, TileDefinition>();
         }
 
         public IEnumerable<Entity> EntitiesAt(Point Pos) {
+            if (!InBounds(Pos)) ;
+                return EmptyList;
             if (EntityPositions[Pos.X, Pos.Y] == null)
                 return EmptyList;
             return EntityPositions[Pos.X, Pos.Y];
         }
 
         
-        public void AddEntityAt(Point Pos, Entity Ent) {
+        public void AddEntity(Entity Ent) {
+            Point Pos = Ent.Position;
+            if (!InBounds(Pos))
+                return;
+            // TODO: Add logging for when 
             if (EntityPositions[Pos.X, Pos.Y] == null) {
                 EntityPositions[Pos.X, Pos.Y] = new LinkedList<Entity>();
                 ActiveLists++;
@@ -37,7 +48,10 @@ namespace Roguelike {
             EntityPositions[Pos.X, Pos.Y].AddLast(Ent);
         }
 
-        public void RemoveEntityAt(Point Pos, Entity Ent) {
+        public void RemoveEntity(Entity Ent) {
+            Point Pos = Ent.Position;
+            if (!InBounds(Pos))
+                return;
             if (EntityPositions[Pos.X, Pos.Y] == null) {
                 return;
             }
@@ -67,12 +81,21 @@ namespace Roguelike {
             InactiveLists = 0;
         }
 
-        public void MoveEntity(Entity E, Point Source, Point Delta) {
-            var Ents = EntitiesAt(Source);
-            if (!Ents.Contains(E))
+        public void MoveEntity(Entity E, Point Dest) {
+            if (!InBounds(Dest))
                 return;
-            RemoveEntityAt(Source, E);
-            AddEntityAt(Source + Delta, E);
+            TileDefinition Def = TileDefs[this[Dest.X, Dest.Y]];
+            if (Def.Blocks == true)
+                return;
+            var Ents = EntitiesAt(E.Position);
+            if (Ents.Contains(E))
+                RemoveEntity(E);
+            E.Position = Dest;
+            AddEntity(E);
+        }
+
+        private bool InBounds(Point Pos) {
+            return (Pos.X >= 0 && Pos.X < Bounds.X && Pos.Y >= 0 && Pos.Y < Bounds.Y);                
         }
     }
 }

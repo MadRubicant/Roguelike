@@ -41,7 +41,6 @@
     <Compile Include="Components\Component.cs" />
     <Compile Include="Components\ControllableComponent.cs" />
     <Compile Include="Components\GraphicsComponent.cs" />
-    <Compile Include="Components\PositionComponent.cs" />
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\Prefabs.cs" />
     <Compile Include="ExtensionMethods.cs" />

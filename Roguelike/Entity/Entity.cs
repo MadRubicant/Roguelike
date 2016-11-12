@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Xna.Framework;
 using Roguelike.Components;
 
 namespace Roguelike.Entities {
     class Entity {
         List<Component> Comps;
+        public Point Position;
+        public int ZPos;
 
         public Entity() {
             Comps = new List<Component>();

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 using System.Collections.Generic;
+using System;
 
 using Roguelike.Entities;
 using Roguelike.Components;
@@ -21,7 +22,6 @@ namespace Roguelike {
         HashSet<Entity> AllEntities;
         TileMap Tiles;
         Point MapSize = new Point(5, 5);
-        Dictionary<int, TileDefinition> TileDefs;
         Entity Player;
         InputHandler MainInputHandler;
         public Game1() {
@@ -31,7 +31,6 @@ namespace Roguelike {
             Renderer = new GraphicsSystem();
             Tiles = new TileMap(5, 5);
             AllEntities = new HashSet<Entity>();
-            TileDefs = new Dictionary<int, TileDefinition>();
             MainInputHandler = new InputHandler();
         }
 
@@ -60,9 +59,9 @@ namespace Roguelike {
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 5; j++) {
                     if (i == 0 || j == 0 || i == 4 || j == 4)
-                        Tiles[i, j] = 0;
-                    else
                         Tiles[i, j] = 1;
+                    else
+                        Tiles[i, j] = 0;
                 }
             }
             // Temporary
@@ -71,17 +70,18 @@ namespace Roguelike {
             Floor.ID = 0;
             Floor.Name = "floor";
             Floor.Text = FloorTexture;
-            TileDefs.Add(0, Floor);
+            Tiles.TileDefs.Add(0, Floor);
 
             TileDefinition Wall = new TileDefinition();
             Wall.Blocks = true;
             Wall.ID = 1;
             Wall.Name = "wall";
             Wall.Text = WallTexture;
-            TileDefs.Add(1, Wall);
-            Player = Prefabs.Unit(new System.Numerics.Vector2(1, 1), PlayerTexture);
+            Tiles.TileDefs.Add(1, Wall);
+
+            Player = Prefabs.Unit(new Point(1, 1), PlayerTexture);
             AllEntities.Add(Player);
-            Tiles.AddEntityAt(new Point(1, 1), Player);
+            Tiles.AddEntity(Player);
             // TODO: use this.Content to load your game content here
             
 
@@ -106,7 +106,15 @@ namespace Roguelike {
             MainInputHandler.GetInput();
 
             if (MainInputHandler.ButtonPressed(Keys.Up))
-                Tiles.MoveEntity(Player, Player.GetComponent<PositionComponent>().Position.ToPoint(), new Point(0, -1));
+                Tiles.MoveEntity(Player, new Point(Player.Position.X, Player.Position.Y -1));
+            if (MainInputHandler.ButtonPressed(Keys.Down))
+                Tiles.MoveEntity(Player, new Point(Player.Position.X, Player.Position.Y + 1));
+            if (MainInputHandler.ButtonPressed(Keys.Left))
+                Tiles.MoveEntity(Player, new Point(Player.Position.X - 1, Player.Position.Y));
+            if (MainInputHandler.ButtonPressed(Keys.Right))
+                Tiles.MoveEntity(Player, new Point(Player.Position.X + 1, Player.Position.Y));
+            if (MainInputHandler.ButtonPressed(Keys.OemTilde))
+                Console.WriteLine("Execution Halted");
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -122,7 +130,7 @@ namespace Roguelike {
             //spriteBatch.Draw(WallTexture, new Vector2(), Color.White);
             for (int i = 0; i < MapSize.X; i++) {
                 for (int j = 0; j < MapSize.Y; j++) {
-                    spriteBatch.Draw(TileDefs[Tiles[i, j]].Text, new Vector2(32 * i, 32 * j), Color.White);
+                    spriteBatch.Draw(Tiles.TileDefs[Tiles[i, j]].Text, new Vector2(32 * i, 32 * j), Color.White);
                 }
             }
             Renderer.Draw(AllEntities, spriteBatch, this.GraphicsDevice.Viewport.Bounds);
