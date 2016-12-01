@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Roguelike.Components {
-    public abstract class Component {
-
+    class PlayerComponent : Component {
+        // Has inventory, player-specific stats, etc
     }
 }

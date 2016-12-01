@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework.Graphics;
 namespace Roguelike {
-    class TileDefinition {
+    public class TileDefinition {
         public int ID;
         public string Name;
         public bool Blocks;

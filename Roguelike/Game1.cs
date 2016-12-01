@@ -7,6 +7,7 @@ using System;
 
 using Roguelike.Entities;
 using Roguelike.Components;
+using Roguelike.Systems;
 
 namespace Roguelike {
     /// <summary>
@@ -20,18 +21,18 @@ namespace Roguelike {
         Texture2D PlayerTexture;
         GraphicsSystem Renderer;
         HashSet<Entity> AllEntities;
-        TileMap Tiles;
+        EntityTileMap Tiles;
         Point MapSize = new Point(5, 5);
         Entity Player;
-        InputHandler MainInputHandler;
+        SystemManager Manager;
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
             Renderer = new GraphicsSystem();
-            Tiles = new TileMap(5, 5);
+            Tiles = new EntityTileMap(5, 5);
             AllEntities = new HashSet<Entity>();
-            MainInputHandler = new InputHandler();
+            Manager = new Systems.SystemManager();
         }
 
         /// <summary>
@@ -103,17 +104,8 @@ namespace Roguelike {
         protected override void Update(GameTime gameTime) {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            MainInputHandler.GetInput();
-
-            if (MainInputHandler.ButtonPressed(Keys.Up))
-                Tiles.MoveEntity(Player, new Point(Player.Position.X, Player.Position.Y -1));
-            if (MainInputHandler.ButtonPressed(Keys.Down))
-                Tiles.MoveEntity(Player, new Point(Player.Position.X, Player.Position.Y + 1));
-            if (MainInputHandler.ButtonPressed(Keys.Left))
-                Tiles.MoveEntity(Player, new Point(Player.Position.X - 1, Player.Position.Y));
-            if (MainInputHandler.ButtonPressed(Keys.Right))
-                Tiles.MoveEntity(Player, new Point(Player.Position.X + 1, Player.Position.Y));
-            if (MainInputHandler.ButtonPressed(Keys.OemTilde))
+            Manager.Update
+            if (InputHandler.ButtonPressed(Keys.OemTilde))
                 Console.WriteLine("Execution Halted");
             // TODO: Add your update logic here
 

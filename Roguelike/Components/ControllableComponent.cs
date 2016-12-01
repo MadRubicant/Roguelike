@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Roguelike.Entities;
 
 namespace Roguelike.Components {
-    class ControllableComponent {
-        Action<Entity> MoveLeft;
-        Action<Entity> MoveUp;
-        Action<Entity> MoveRight;
-        Action<Entity> MoveDown;
+    class ControllableComponent : Component {
+        public string Intent;
+        public ControllableComponent(string Intent) {
+            this.Intent = Intent;
+        }
     }
 }

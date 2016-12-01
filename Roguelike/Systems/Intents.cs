@@ -1,0 +1,1 @@
+﻿public enum Intents { None, MoveUp, MoveLeft, MoveRight, MoveDown }

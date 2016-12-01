@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Roguelike.Components;
 
 namespace Roguelike.Entities {
-    class Entity {
+    public class Entity {
         List<Component> Comps;
         public Point Position;
         public int ZPos;
