@@ -7,28 +7,28 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
 namespace Roguelike.Entities {
-    public class EntityTileMap {
-        int[,] TileGrid;
-        Point Bounds;
+    public class GameWorld {
+        Tile[,] TileGrid;
+        public readonly Point Bounds;
 
-        LinkedList<Entity>[,] EntityPositions;
-        HashSet<Entity> AllActiveEntities;
+        LinkedList<GameEntity>[,] EntityPositions;
+        HashSet<GameEntity> AllActiveEntities;
 
-        readonly Entity[] EmptyList = { };
+        readonly GameEntity[] EmptyList = { };
         int ActiveLists;
         int InactiveLists;
 
         public Dictionary<int, TileDefinition> TileDefs { get; private set; }
 
-        public IEnumerable<Entity> AllEntities {
+        public IEnumerable<GameEntity> AllEntities {
             get { return AllActiveEntities; }
         }
 
-        public EntityTileMap(int width, int height) {
-            TileGrid = new int[width, height];
+        public GameWorld(int width, int height) {
+            TileGrid = new Tile[width, height];
             Bounds = new Point(width, height);
-            EntityPositions = new LinkedList<Entity>[width, height];
-            AllActiveEntities = new HashSet<Entity>();
+            EntityPositions = new LinkedList<GameEntity>[width, height];
+            AllActiveEntities = new HashSet<GameEntity>();
             ActiveLists = 0;
             InactiveLists = 0;
             TileDefs = new Dictionary<int, TileDefinition>();
@@ -39,7 +39,7 @@ namespace Roguelike.Entities {
         /// </summary>
         /// <param name="Pos">The tile position to check</param>
         /// <returns>A list of entities</returns>
-        public IEnumerable<Entity> EntitiesAt(Point Pos) {
+        public IEnumerable<GameEntity> EntitiesAt(Point Pos) {
             if (!InBounds(Pos))
                 return EmptyList;
             if (EntityPositions[Pos.X, Pos.Y] == null)
@@ -51,13 +51,13 @@ namespace Roguelike.Entities {
         /// Adds the given <see cref="Entity"/> to the world
         /// </summary>
         /// <param name="Ent">The <see cref="Entity"/> to add</param>
-        public void AddEntity(Entity Ent) {
+        public void AddEntity(GameEntity Ent) {
             Point Pos = Ent.Position;
             if (!InBounds(Pos))
                 return;
             // TODO: Add logging for when an entity is attempted to be added out of bounds
             if (EntityPositions[Pos.X, Pos.Y] == null) {
-                EntityPositions[Pos.X, Pos.Y] = new LinkedList<Entity>();
+                EntityPositions[Pos.X, Pos.Y] = new LinkedList<GameEntity>();
                 ActiveLists++;
             }
             EntityPositions[Pos.X, Pos.Y].AddLast(Ent);
@@ -68,7 +68,7 @@ namespace Roguelike.Entities {
         /// Removes the given <see cref="Entity"/> from the world
         /// </summary>
         /// <param name="Ent">The <see cref="Entity"/> to remove</param>
-        public void RemoveEntity(Entity Ent) {
+        public void RemoveEntity(GameEntity Ent) {
             Point Pos = Ent.Position;
             if (!InBounds(Pos))
                 return;
@@ -92,11 +92,11 @@ namespace Roguelike.Entities {
         /// <param name="E">The <see cref="Entity"/> to move</param>
         /// <param name="Dest">The destination</param>
         /// <returns>True if the move was successful, false otherwise</returns>
-        public bool MoveEntity(Entity E, Point Dest) {
+        public bool MoveEntity(GameEntity E, Point Dest) {
 
             if (!InBounds(Dest))
                 return false;
-            TileDefinition Def = TileDefs[this[Dest.X, Dest.Y]];
+            TileDefinition Def = TileDefs[this[Dest.X, Dest.Y].ID];
             if (Def.Blocks == true)
                 return false;
             var Ents = EntitiesAt(E.Position);
@@ -113,7 +113,7 @@ namespace Roguelike.Entities {
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public int this[int x, int y]
+        public Tile this[int x, int y]
         {
             get { return TileGrid[x, y]; }
             set { TileGrid[x, y] = value; }

@@ -4,25 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using Roguelike.Entities;
-using Roguelike.Components;
 
 namespace Roguelike {
-    class GraphicsSystem {
+    class MainRenderer {
         int TileScale = 32;
-        public void Draw(IEnumerable<Entity> EntList, SpriteBatch spriteBatch, Microsoft.Xna.Framework.Rectangle Camera) {
-            var VisibleObjects = from Ent in EntList
-                                 where Ent.HasComponent<GraphicsComponent>()
-                                 orderby Ent.ZPos
-                                 select Ent;
+        public void DrawEntities(GameWorld Map, SpriteBatch spriteBatch, Rectangle Camera) {
+                      
+        }
 
-            foreach (Entity Ent in VisibleObjects) {
-                var Graphics = Ent.GetComponent<GraphicsComponent>();
+        public void DrawTiles(GameWorld Map, SpriteBatch spriteBatch, Rectangle Camera) {
+            
+            for (int x = 0; x < Map.Bounds.X; x++) {
+                for (int y = 0; y < Map.Bounds.Y; y++) {
+                    Tile t = Map[x, y];
+                    TileDefinition td = Map.TileDefs[t.ID];
 
-                spriteBatch.Draw(Graphics.Sprite, (Ent.Position.ToVector2() * TileScale), Microsoft.Xna.Framework.Color.White);
-            }           
+                    spriteBatch.Draw(td.Text, new Vector2(x, y) * TileScale, Color.White);
+                }
+            }
         }
     }
 }

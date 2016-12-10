@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using System;
 
 using Roguelike.Entities;
-using Roguelike.Components;
-using Roguelike.Systems;
 
 namespace Roguelike {
     /// <summary>
@@ -19,20 +17,17 @@ namespace Roguelike {
         Texture2D WallTexture;
         Texture2D FloorTexture;
         Texture2D PlayerTexture;
-        GraphicsSystem Renderer;
-        HashSet<Entity> AllEntities;
-        EntityTileMap Tiles;
+        MainRenderer Renderer;
+        GameWorld Tiles;
         Point MapSize = new Point(5, 5);
-        Entity Player;
-        SystemManager Manager;
+        GameEntity Player;
+        TextureDictionary TextureDict;
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
-            Renderer = new GraphicsSystem();
-            Tiles = new EntityTileMap(5, 5);
-            AllEntities = new HashSet<Entity>();
-            Manager = new Systems.SystemManager();
+            Renderer = new MainRenderer();
+            Tiles = new GameWorld(5, 5);
         }
 
         /// <summary>
@@ -54,15 +49,17 @@ namespace Roguelike {
         protected override void LoadContent() {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            TextureDict = new TextureDictionary(Content);
+            TextureDict.LoadAllTextures();
             WallTexture = CreateTexture(Color.DarkSlateGray, new Point(32, 32));
             FloorTexture = CreateTexture(Color.LightGray, new Point(32, 32));
             PlayerTexture = CreateTexture(Color.Red, new Point(32, 32));
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 5; j++) {
                     if (i == 0 || j == 0 || i == 4 || j == 4)
-                        Tiles[i, j] = 1;
+                        Tiles[i, j] = new Tile(1);
                     else
-                        Tiles[i, j] = 0;
+                        Tiles[i, j] = new Tile(0);
                 }
             }
             // Temporary
@@ -80,9 +77,8 @@ namespace Roguelike {
             Wall.Text = WallTexture;
             Tiles.TileDefs.Add(1, Wall);
 
-            Player = Prefabs.Unit(new Point(1, 1), PlayerTexture);
-            AllEntities.Add(Player);
-            Tiles.AddEntity(Player);
+            
+            //Tiles.AddEntity(Player);
             // TODO: use this.Content to load your game content here
             
 
@@ -104,7 +100,7 @@ namespace Roguelike {
         protected override void Update(GameTime gameTime) {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            Manager.Update
+
             if (InputHandler.ButtonPressed(Keys.OemTilde))
                 Console.WriteLine("Execution Halted");
             // TODO: Add your update logic here
@@ -122,10 +118,12 @@ namespace Roguelike {
             //spriteBatch.Draw(WallTexture, new Vector2(), Color.White);
             for (int i = 0; i < MapSize.X; i++) {
                 for (int j = 0; j < MapSize.Y; j++) {
-                    spriteBatch.Draw(Tiles.TileDefs[Tiles[i, j]].Text, new Vector2(32 * i, 32 * j), Color.White);
+                    spriteBatch.Draw(Tiles.TileDefs[Tiles[i, j].ID].Text, new Vector2(32 * i, 32 * j), Color.White);
                 }
             }
-            Renderer.Draw(AllEntities, spriteBatch, this.GraphicsDevice.Viewport.Bounds);
+            Renderer.DrawTiles(Tiles, spriteBatch, GraphicsDevice.Viewport.Bounds);
+            Renderer.DrawEntities(Tiles, spriteBatch, this.GraphicsDevice.Viewport.Bounds);
+            
             // TODO: Add your drawing code here
 
             spriteBatch.End();
