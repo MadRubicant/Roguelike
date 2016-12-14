@@ -19,7 +19,7 @@ namespace Roguelike {
         Texture2D PlayerTexture;
         MainRenderer Renderer;
         GameWorld Tiles;
-        Point MapSize = new Point(5, 5);
+        Point MapSize = new Point(25);
         Actor Player;
         TextureDictionary TextureDict;
         ActorSystem actorSystem = new ActorSystem();
@@ -28,7 +28,7 @@ namespace Roguelike {
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
             Renderer = new MainRenderer();
-            Tiles = new GameWorld(5, 5);
+            Tiles = new GameWorld(25,25);
         }
 
         /// <summary>
@@ -55,9 +55,9 @@ namespace Roguelike {
             WallTexture = CreateTexture(Color.DarkSlateGray, new Point(32, 32));
             FloorTexture = CreateTexture(Color.LightGray, new Point(32, 32));
             PlayerTexture = CreateTexture(Color.Red, new Point(32, 32));
-            for (int i = 0; i < 5; i++) {
-                for (int j = 0; j < 5; j++) {
-                    if (i == 0 || j == 0 || i == 4 || j == 4)
+            for (int i = 0; i < 25; i++) {
+                for (int j = 0; j < 25; j++) {
+                    if (i == 0 || j == 0 || i == 24 || j == 24)
                         Tiles[i, j] = new Tile(1);
                     else
                         Tiles[i, j] = new Tile(0);
@@ -126,16 +126,11 @@ namespace Roguelike {
         protected override void Draw(GameTime gameTime) {
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            //spriteBatch.Draw(WallTexture, new Vector2(), Color.White);
-            for (int i = 0; i < MapSize.X; i++) {
-                for (int j = 0; j < MapSize.Y; j++) {
-                    spriteBatch.Draw(Tiles.TileDefs[Tiles[i, j].ID].Text, new Vector2(32 * i, 32 * j), Color.White);
-                }
-            }
-            Renderer.Draw(Tiles, spriteBatch, GraphicsDevice.Viewport.Bounds);
-            
-            // TODO: Add your drawing code here
 
+            Rectangle camera = GraphicsDevice.Viewport.Bounds;
+            camera.Location = new Point(Player.Position.X * 32, Player.Position.Y * 32);
+            Renderer.Draw(Tiles, spriteBatch, camera);
+            
             spriteBatch.End();
             base.Draw(gameTime);
         }

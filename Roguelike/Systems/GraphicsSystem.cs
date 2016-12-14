@@ -13,18 +13,20 @@ namespace Roguelike {
     class MainRenderer {
         int TileScale = 32;
         public void Draw(GameWorld Map, SpriteBatch spriteBatch, Rectangle Camera) {
-            
+            Vector2 Offset = new Vector2(Camera.Width / 2, Camera.Height / 2);
+            Vector2 CameraOffset = Camera.Location.ToVector2();
             for (int x = 0; x < Map.Bounds.X; x++) {
                 for (int y = 0; y < Map.Bounds.Y; y++) {
                     Tile t = Map[x, y];
                     TileDefinition td = Map.TileDefs[t.ID];
-
-                    spriteBatch.Draw(td.Text, new Vector2(x, y) * TileScale, Color.White);
+                    Vector2 TileLocation = new Vector2(x, y) * TileScale + Offset - CameraOffset;
+                    spriteBatch.Draw(td.Text, TileLocation, Color.White);
                 }
             }
 
             foreach (Actor A in Map.AllEntities) {
-                spriteBatch.Draw(A.ActorSprite, A.Position.ToVector2() * TileScale, Color.White);
+                Vector2 ActorLocation = A.Position.ToVector2() * TileScale + Offset - CameraOffset;
+                spriteBatch.Draw(A.ActorSprite, ActorLocation, Color.White);
             }
         }
     }
