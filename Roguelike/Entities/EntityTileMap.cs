@@ -60,7 +60,7 @@ namespace Roguelike.Entities {
                 ActorPositions[Pos.X, Pos.Y] = new LinkedList<Actor>();
                 ActiveLists++;
             }
-            ActorPositions[Pos.X, Pos.Y].AddLast(Ent);
+            ActorPositions[Pos.X, Pos.Y].AddFirst(Ent);
             AllActiveEntities.Add(Ent);
         }
 
@@ -87,24 +87,36 @@ namespace Roguelike.Entities {
         }
 
         /// <summary>
-        /// Moves the given <see cref="Entity"/> from its current position to <paramref name="Dest"/>. Does collision checking 
+        /// Moves the given <see cref="Actor"/> from its current position to <paramref name="Dest"/>. Does collision checking, may have
+        /// unpredictable results if you pass an Actor not in the game world already
         /// </summary>
-        /// <param name="E">The <see cref="Entity"/> to move</param>
+        /// <param name="E">The <see cref="Actor"/> to move</param>
         /// <param name="Dest">The destination</param>
         /// <returns>True if the move was successful, false otherwise</returns>
         public bool MoveEntity(Actor E, Point Dest) {
-
             if (!InBounds(Dest))
                 return false;
             TileDefinition Def = TileDefs[this[Dest.X, Dest.Y].ID];
             if (Def.Blocks == true)
                 return false;
-            var Ents = EntitiesAt(E.Position);
-            if (Ents.Contains(E))
-                RemoveEntity(E);
+            Point Pos = E.Position;
+            // Remove the actor from its current linked list
+            ActorPositions[Pos.X, Pos.Y].Remove(E);
+            if (ActorPositions[Pos.X, Pos.Y].Count == 0)
+                InactiveLists++;
+
+            // Create a new linked list at Dest if we need one, then stick the actor in it
+            if (ActorPositions[Dest.X, Dest.Y] == null) {
+                ActorPositions[Dest.X, Dest.Y] = new LinkedList<Actor>();
+                ActiveLists++;
+            }
+            ActorPositions[Dest.X, Dest.Y].AddFirst(E);
             E.Position = Dest;
-            AddEntity(E);
+            if ((float)ActiveLists / (float)InactiveLists < .5f)
+                ClearInactive();
+
             return true;
+
         }
 
         /// <summary>

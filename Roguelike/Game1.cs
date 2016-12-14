@@ -22,6 +22,7 @@ namespace Roguelike {
         Point MapSize = new Point(5, 5);
         Actor Player;
         TextureDictionary TextureDict;
+        ActorSystem actorSystem = new ActorSystem();
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -98,7 +99,8 @@ namespace Roguelike {
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime) {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            InputHandler.GetInput();
+            if (InputHandler.ButtonPressed(Keys.Escape))
                 Exit();
 
             if (InputHandler.ButtonPressed(Keys.OemTilde))
@@ -113,6 +115,7 @@ namespace Roguelike {
                 Player.Action = ActorAction.MoveUp;
             // TODO: Add your update logic here
 
+            actorSystem.ResolveMovement(Tiles);
             base.Update(gameTime);
         }
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
+
 namespace Roguelike {
     static class InputHandler {
         static KeyboardState PreviousKeyboard;
