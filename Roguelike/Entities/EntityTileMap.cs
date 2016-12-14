@@ -11,24 +11,24 @@ namespace Roguelike.Entities {
         Tile[,] TileGrid;
         public readonly Point Bounds;
 
-        LinkedList<GameEntity>[,] EntityPositions;
-        HashSet<GameEntity> AllActiveEntities;
+        LinkedList<Actor>[,] ActorPositions;
+        HashSet<Actor> AllActiveEntities;
 
-        readonly GameEntity[] EmptyList = { };
-        int ActiveLists;
+        readonly Actor[] EmptyList = { };
+        int ActiveLists;   
         int InactiveLists;
 
         public Dictionary<int, TileDefinition> TileDefs { get; private set; }
 
-        public IEnumerable<GameEntity> AllEntities {
+        public IEnumerable<Actor> AllEntities {
             get { return AllActiveEntities; }
         }
 
         public GameWorld(int width, int height) {
             TileGrid = new Tile[width, height];
             Bounds = new Point(width, height);
-            EntityPositions = new LinkedList<GameEntity>[width, height];
-            AllActiveEntities = new HashSet<GameEntity>();
+            ActorPositions = new LinkedList<Actor>[width, height];
+            AllActiveEntities = new HashSet<Actor>();
             ActiveLists = 0;
             InactiveLists = 0;
             TileDefs = new Dictionary<int, TileDefinition>();
@@ -39,28 +39,28 @@ namespace Roguelike.Entities {
         /// </summary>
         /// <param name="Pos">The tile position to check</param>
         /// <returns>A list of entities</returns>
-        public IEnumerable<GameEntity> EntitiesAt(Point Pos) {
+        public IEnumerable<Actor> EntitiesAt(Point Pos) {
             if (!InBounds(Pos))
                 return EmptyList;
-            if (EntityPositions[Pos.X, Pos.Y] == null)
+            if (ActorPositions[Pos.X, Pos.Y] == null)
                 return EmptyList;
-            return EntityPositions[Pos.X, Pos.Y];
+            return ActorPositions[Pos.X, Pos.Y];
         }
 
         /// <summary>
         /// Adds the given <see cref="Entity"/> to the world
         /// </summary>
         /// <param name="Ent">The <see cref="Entity"/> to add</param>
-        public void AddEntity(GameEntity Ent) {
+        public void AddEntity(Actor Ent) {
             Point Pos = Ent.Position;
             if (!InBounds(Pos))
                 return;
             // TODO: Add logging for when an entity is attempted to be added out of bounds
-            if (EntityPositions[Pos.X, Pos.Y] == null) {
-                EntityPositions[Pos.X, Pos.Y] = new LinkedList<GameEntity>();
+            if (ActorPositions[Pos.X, Pos.Y] == null) {
+                ActorPositions[Pos.X, Pos.Y] = new LinkedList<Actor>();
                 ActiveLists++;
             }
-            EntityPositions[Pos.X, Pos.Y].AddLast(Ent);
+            ActorPositions[Pos.X, Pos.Y].AddLast(Ent);
             AllActiveEntities.Add(Ent);
         }
 
@@ -68,18 +68,18 @@ namespace Roguelike.Entities {
         /// Removes the given <see cref="Entity"/> from the world
         /// </summary>
         /// <param name="Ent">The <see cref="Entity"/> to remove</param>
-        public void RemoveEntity(GameEntity Ent) {
+        public void RemoveEntity(Actor Ent) {
             Point Pos = Ent.Position;
             if (!InBounds(Pos))
                 return;
-            if (EntityPositions[Pos.X, Pos.Y] == null) {
+            if (ActorPositions[Pos.X, Pos.Y] == null) {
                 return;
             }
 
-            EntityPositions[Pos.X, Pos.Y].Remove(Ent);
+            ActorPositions[Pos.X, Pos.Y].Remove(Ent);
             AllActiveEntities.Remove(Ent);
 
-            if (EntityPositions[Pos.X, Pos.Y].Count == 0)
+            if (ActorPositions[Pos.X, Pos.Y].Count == 0)
                 InactiveLists++;
 
             if ((float)ActiveLists / (float)InactiveLists < .5f)
@@ -92,7 +92,7 @@ namespace Roguelike.Entities {
         /// <param name="E">The <see cref="Entity"/> to move</param>
         /// <param name="Dest">The destination</param>
         /// <returns>True if the move was successful, false otherwise</returns>
-        public bool MoveEntity(GameEntity E, Point Dest) {
+        public bool MoveEntity(Actor E, Point Dest) {
 
             if (!InBounds(Dest))
                 return false;
@@ -120,10 +120,10 @@ namespace Roguelike.Entities {
         }
 
         private void ClearInactive() {
-            for (int x = 0; x < EntityPositions.GetLength(0); x++) {
-                for (int y = 0; y < EntityPositions.GetLength(1); y++) {
-                    if (EntityPositions[x, y] != null && EntityPositions[x, y].Count == 0) {
-                        EntityPositions[x, y] = null;
+            for (int x = 0; x < ActorPositions.GetLength(0); x++) {
+                for (int y = 0; y < ActorPositions.GetLength(1); y++) {
+                    if (ActorPositions[x, y] != null && ActorPositions[x, y].Count == 0) {
+                        ActorPositions[x, y] = null;
                         ActiveLists--;
                     }
                 }

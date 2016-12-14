@@ -12,11 +12,7 @@ using Roguelike.Entities;
 namespace Roguelike {
     class MainRenderer {
         int TileScale = 32;
-        public void DrawEntities(GameWorld Map, SpriteBatch spriteBatch, Rectangle Camera) {
-                      
-        }
-
-        public void DrawTiles(GameWorld Map, SpriteBatch spriteBatch, Rectangle Camera) {
+        public void Draw(GameWorld Map, SpriteBatch spriteBatch, Rectangle Camera) {
             
             for (int x = 0; x < Map.Bounds.X; x++) {
                 for (int y = 0; y < Map.Bounds.Y; y++) {
@@ -25,6 +21,10 @@ namespace Roguelike {
 
                     spriteBatch.Draw(td.Text, new Vector2(x, y) * TileScale, Color.White);
                 }
+            }
+
+            foreach (Actor A in Map.AllEntities) {
+                spriteBatch.Draw(A.ActorSprite, A.Position.ToVector2() * TileScale, Color.White);
             }
         }
     }

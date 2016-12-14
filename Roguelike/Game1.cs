@@ -20,7 +20,7 @@ namespace Roguelike {
         MainRenderer Renderer;
         GameWorld Tiles;
         Point MapSize = new Point(5, 5);
-        GameEntity Player;
+        Actor Player;
         TextureDictionary TextureDict;
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -77,8 +77,8 @@ namespace Roguelike {
             Wall.Text = WallTexture;
             Tiles.TileDefs.Add(1, Wall);
 
-            
-            //Tiles.AddEntity(Player);
+            Player = new Actor(new Point(1, 1), PlayerTexture, true);
+            Tiles.AddEntity(Player);
             // TODO: use this.Content to load your game content here
             
 
@@ -103,6 +103,14 @@ namespace Roguelike {
 
             if (InputHandler.ButtonPressed(Keys.OemTilde))
                 Console.WriteLine("Execution Halted");
+            if (InputHandler.ButtonPressed(Keys.Left))
+                Player.Action = ActorAction.MoveLeft;
+            else if (InputHandler.ButtonPressed(Keys.Right))
+                Player.Action = ActorAction.MoveRight;
+            else if (InputHandler.ButtonPressed(Keys.Down))
+                Player.Action = ActorAction.MoveDown;
+            else if (InputHandler.ButtonPressed(Keys.Up))
+                Player.Action = ActorAction.MoveUp;
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -121,8 +129,7 @@ namespace Roguelike {
                     spriteBatch.Draw(Tiles.TileDefs[Tiles[i, j].ID].Text, new Vector2(32 * i, 32 * j), Color.White);
                 }
             }
-            Renderer.DrawTiles(Tiles, spriteBatch, GraphicsDevice.Viewport.Bounds);
-            Renderer.DrawEntities(Tiles, spriteBatch, this.GraphicsDevice.Viewport.Bounds);
+            Renderer.Draw(Tiles, spriteBatch, GraphicsDevice.Viewport.Bounds);
             
             // TODO: Add your drawing code here
 

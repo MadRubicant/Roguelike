@@ -38,10 +38,11 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EntityConstructor.cs" />
+    <Compile Include="ActorSystem.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GameEntity.cs" />
+    <Compile Include="Actor.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Systems\GraphicsSystem.cs" />
     <Compile Include="MouseButton.cs" />
     <Compile Include="Program.cs" />
@@ -66,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
-    <Content Include="Monsters.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
