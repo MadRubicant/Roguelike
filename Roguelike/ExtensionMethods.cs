@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roguelike {
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Roguelike.Extensions {
     static class ExtensionMethods {
-        public static Microsoft.Xna.Framework.Vector2 AsXNA(this System.Numerics.Vector2 Vector) {
-            return new Microsoft.Xna.Framework.Vector2(Vector.X, Vector.Y);
-        }
-
-        public static System.Numerics.Vector2 AsNumerics(this Microsoft.Xna.Framework.Vector2 Vector) {
-            return new System.Numerics.Vector2(Vector.X, Vector.Y);
-        }
-
-        public static Microsoft.Xna.Framework.Point ToPoint(this System.Numerics.Vector2 Vector) {
-            return new Microsoft.Xna.Framework.Point((int)Vector.X, (int)Vector.Y);
+        public static Texture2D SubSprite(this Texture2D Original, Rectangle Bounds) {
+            if (!Original.Bounds.Contains(Bounds))
+                Bounds = Original.Bounds;
+            Color[] ColorData = new Color[Bounds.Width * Bounds.Height];
+            Original.GetData<Color>(0, Bounds, ColorData, 0, ColorData.Length);
+            Texture2D Final = new Texture2D(Original.GraphicsDevice, Bounds.Width, Bounds.Height);
+            Final.SetData<Color>(ColorData);
+            return Final;
         }
     }
 }

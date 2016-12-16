@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Roguelike {
     public struct Tile : IComparable<Tile>, IEquatable<Tile>{
-        public int ID { get; }
-
-        public Tile(int ID) {
+        public short ID { get; }
+        public byte Variant { get; }
+        public Tile(short ID, byte Variant) {
             this.ID = ID;
+            this.Variant = Variant;
         }
 
         public static bool operator ==(Tile left, Tile right) {

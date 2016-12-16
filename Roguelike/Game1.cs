@@ -11,7 +11,8 @@ namespace Roguelike {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game {
+    public class GameMain : Game {
+        bool graphicsSettingsChanged = false;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D WallTexture;
@@ -23,14 +24,21 @@ namespace Roguelike {
         Actor Player;
         TextureDictionary TextureDict;
         ActorSystem actorSystem = new ActorSystem();
-        public Game1() {
+        public GameMain() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
             Renderer = new MainRenderer();
             Tiles = new GameWorld(25,25);
+            this.Window.AllowUserResizing = true;
+            Window.ClientSizeChanged += WindowSizeChanged;
         }
 
+        void WindowSizeChanged(object Sender, EventArgs E) {
+            graphics.PreferredBackBufferHeight = Window.ClientBounds.Height;
+            graphics.PreferredBackBufferWidth = Window.ClientBounds.Width;
+            graphicsSettingsChanged = true;
+        }
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -52,31 +60,33 @@ namespace Roguelike {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             TextureDict = new TextureDictionary(Content);
             TextureDict.LoadAllTextures();
+            //TextureDict.SplitTexture("tile");
+            
             WallTexture = CreateTexture(Color.DarkSlateGray, new Point(32, 32));
             FloorTexture = CreateTexture(Color.LightGray, new Point(32, 32));
             PlayerTexture = CreateTexture(Color.Red, new Point(32, 32));
-            for (int i = 0; i < 25; i++) {
-                for (int j = 0; j < 25; j++) {
-                    if (i == 0 || j == 0 || i == 24 || j == 24)
-                        Tiles[i, j] = new Tile(1);
+            for (int i = 0; i < 20; i++) {
+                for (int j = 0; j < 20; j++) {
+                    if (i == 0 || j == 0 || i == 19 || j == 19)
+                        Tiles[i, j] = new Tile(0, 0);
                     else
-                        Tiles[i, j] = new Tile(0);
+                        Tiles[i, j] = new Tile(1, 0);
                 }
             }
             // Temporary
             TileDefinition Floor = new TileDefinition();
             Floor.Blocks = false;
-            Floor.ID = 0;
-            Floor.Name = "floor";
-            Floor.Text = FloorTexture;
-            Tiles.TileDefs.Add(0, Floor);
+            Floor.ID = 1;
+            
+            Floor.Text = TextureDict["tile10"];
+            Tiles.TileDefs.Add(1, Floor);
 
             TileDefinition Wall = new TileDefinition();
             Wall.Blocks = true;
-            Wall.ID = 1;
+            Wall.ID = 0;
             Wall.Name = "wall";
-            Wall.Text = WallTexture;
-            Tiles.TileDefs.Add(1, Wall);
+            Wall.Text = TextureDict["tile25"];
+            Tiles.TileDefs.Add(0, Wall);
 
             Player = new Actor(new Point(1, 1), PlayerTexture, true);
             Tiles.AddEntity(Player);
@@ -99,12 +109,16 @@ namespace Roguelike {
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime) {
+            if (graphicsSettingsChanged == true) {
+                graphics.ApplyChanges();
+                graphicsSettingsChanged = false;
+            }
             InputHandler.GetInput();
             if (InputHandler.ButtonPressed(Keys.Escape))
                 Exit();
 
             if (InputHandler.ButtonPressed(Keys.OemTilde))
-                Console.WriteLine("Execution Halted");
+                Console.WriteLine("Execution Halted"); // You should insert a breakpoint here
             if (InputHandler.ButtonPressed(Keys.Left))
                 Player.Action = ActorAction.MoveLeft;
             else if (InputHandler.ButtonPressed(Keys.Right))
