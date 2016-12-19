@@ -10,7 +10,15 @@ namespace Roguelike {
         public static Dictionary<int, TileDefinition> TileDefs = new Dictionary<int, TileDefinition>();
         public int ID;
         public string Name;
+        public string Theme;
         public bool Blocks;
-        public Texture2D Text;
+        public Texture2D[] Textures;
+
+        public TileDefinition() {
+        }
+
+        public TileDefinition(byte NumVariants) {
+            Textures = new Texture2D[NumVariants];
+        }
     }
 }

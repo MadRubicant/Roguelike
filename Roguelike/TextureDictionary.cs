@@ -38,7 +38,7 @@ namespace Roguelike {
             foreach (var file in files) {
                 string noExtension = file.Name;
                 noExtension = noExtension.Substring(0, noExtension.LastIndexOf('.'));
-                Textures.Add(noExtension, Content.Load<Texture2D>(RelativePath + DirInfo.Name + "/" + noExtension));
+                Textures.Add(RelativePath + DirInfo.Name + '/' + noExtension, Content.Load<Texture2D>(RelativePath + DirInfo.Name + "/" + noExtension));
             }
         }
         public Texture2D this[string Name]

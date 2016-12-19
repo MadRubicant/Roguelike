@@ -20,7 +20,7 @@ namespace Roguelike {
                     Tile t = Map[x, y];
                     TileDefinition td = Map.TileDefs[t.ID];
                     Vector2 TileLocation = new Vector2(x, y) * TileScale + Offset - CameraOffset;
-                    spriteBatch.Draw(td.Text, TileLocation, Color.White);
+                    spriteBatch.Draw(td.Textures[t.Variant], TileLocation, Color.White);
                 }
             }
 

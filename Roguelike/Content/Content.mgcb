@@ -37,7 +37,7 @@
 /processorParam:TextureFormat=Color
 /build:textures\tile.png
 
-#begin textures/tiles/tile10.png
+#begin textures/tiles/hell/tile129.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -47,9 +47,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile10.png
+/build:textures/tiles/hell/tile129.png
 
-#begin textures/tiles/tile100.png
+#begin textures/tiles/hell/tile130.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -59,9 +59,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile100.png
+/build:textures/tiles/hell/tile130.png
 
-#begin textures/tiles/tile101.png
+#begin textures/tiles/hell/tile131.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -71,9 +71,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile101.png
+/build:textures/tiles/hell/tile131.png
 
-#begin textures/tiles/tile105.png
+#begin textures/tiles/hell/tile132.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -83,9 +83,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile105.png
+/build:textures/tiles/hell/tile132.png
 
-#begin textures/tiles/tile106.png
+#begin textures/tiles/hell/tile133.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -95,9 +95,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile106.png
+/build:textures/tiles/hell/tile133.png
 
-#begin textures/tiles/tile107.png
+#begin textures/tiles/hell/tile134.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -107,9 +107,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile107.png
+/build:textures/tiles/hell/tile134.png
 
-#begin textures/tiles/tile108.png
+#begin textures/tiles/hell/tile135.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -119,9 +119,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile108.png
+/build:textures/tiles/hell/tile135.png
 
-#begin textures/tiles/tile109.png
+#begin textures/tiles/hell/tile137.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -131,9 +131,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile109.png
+/build:textures/tiles/hell/tile137.png
 
-#begin textures/tiles/tile11.png
+#begin textures/tiles/hell/tile138.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -143,9 +143,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile11.png
+/build:textures/tiles/hell/tile138.png
 
-#begin textures/tiles/tile113.png
+#begin textures/tiles/hell/tile139.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -155,9 +155,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile113.png
+/build:textures/tiles/hell/tile139.png
 
-#begin textures/tiles/tile114.png
+#begin textures/tiles/hell/tile140.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -167,9 +167,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile114.png
+/build:textures/tiles/hell/tile140.png
 
-#begin textures/tiles/tile115.png
+#begin textures/tiles/hell/tile141.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -179,9 +179,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile115.png
+/build:textures/tiles/hell/tile141.png
 
-#begin textures/tiles/tile116.png
+#begin textures/tiles/hell/tile142.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -191,9 +191,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile116.png
+/build:textures/tiles/hell/tile142.png
 
-#begin textures/tiles/tile117.png
+#begin textures/tiles/hell/tile143.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -203,9 +203,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile117.png
+/build:textures/tiles/hell/tile143.png
 
-#begin textures/tiles/tile12.png
+#begin textures/tiles/ice/tile41.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -215,9 +215,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile12.png
+/build:textures/tiles/ice/tile41.png
 
-#begin textures/tiles/tile121.png
+#begin textures/tiles/ice/tile42.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -227,9 +227,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile121.png
+/build:textures/tiles/ice/tile42.png
 
-#begin textures/tiles/tile122.png
+#begin textures/tiles/ice/tile43.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -239,9 +239,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile122.png
+/build:textures/tiles/ice/tile43.png
 
-#begin textures/tiles/tile123.png
+#begin textures/tiles/ice/tile44.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -251,9 +251,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile123.png
+/build:textures/tiles/ice/tile44.png
 
-#begin textures/tiles/tile124.png
+#begin textures/tiles/ice/tile45.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -263,9 +263,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile124.png
+/build:textures/tiles/ice/tile45.png
 
-#begin textures/tiles/tile125.png
+#begin textures/tiles/ice/tile46.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -275,9 +275,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile125.png
+/build:textures/tiles/ice/tile46.png
 
-#begin textures/tiles/tile129.png
+#begin textures/tiles/ice/tile49.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -287,9 +287,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile129.png
+/build:textures/tiles/ice/tile49.png
 
-#begin textures/tiles/tile13.png
+#begin textures/tiles/ice/tile50.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -299,9 +299,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile13.png
+/build:textures/tiles/ice/tile50.png
 
-#begin textures/tiles/tile130.png
+#begin textures/tiles/ice/tile51.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -311,9 +311,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile130.png
+/build:textures/tiles/ice/tile51.png
 
-#begin textures/tiles/tile131.png
+#begin textures/tiles/ice/tile52.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -323,9 +323,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile131.png
+/build:textures/tiles/ice/tile52.png
 
-#begin textures/tiles/tile132.png
+#begin textures/tiles/ice/tile53.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -335,9 +335,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile132.png
+/build:textures/tiles/ice/tile53.png
 
-#begin textures/tiles/tile133.png
+#begin textures/tiles/ice/tile54.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -347,9 +347,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile133.png
+/build:textures/tiles/ice/tile54.png
 
-#begin textures/tiles/tile134.png
+#begin textures/tiles/ice/tile57.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -359,9 +359,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile134.png
+/build:textures/tiles/ice/tile57.png
 
-#begin textures/tiles/tile135.png
+#begin textures/tiles/ice/tile58.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -371,9 +371,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile135.png
+/build:textures/tiles/ice/tile58.png
 
-#begin textures/tiles/tile137.png
+#begin textures/tiles/ice/tile59.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -383,9 +383,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile137.png
+/build:textures/tiles/ice/tile59.png
 
-#begin textures/tiles/tile138.png
+#begin textures/tiles/ice/tile60.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -395,9 +395,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile138.png
+/build:textures/tiles/ice/tile60.png
 
-#begin textures/tiles/tile139.png
+#begin textures/tiles/ice/tile61.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -407,9 +407,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile139.png
+/build:textures/tiles/ice/tile61.png
 
-#begin textures/tiles/tile14.png
+#begin textures/tiles/ice/tile62.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -419,9 +419,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile14.png
+/build:textures/tiles/ice/tile62.png
 
-#begin textures/tiles/tile140.png
+#begin textures/tiles/pyramid/tile100.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -431,9 +431,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile140.png
+/build:textures/tiles/pyramid/tile100.png
 
-#begin textures/tiles/tile141.png
+#begin textures/tiles/pyramid/tile101.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -443,9 +443,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile141.png
+/build:textures/tiles/pyramid/tile101.png
 
-#begin textures/tiles/tile142.png
+#begin textures/tiles/pyramid/tile105.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -455,9 +455,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile142.png
+/build:textures/tiles/pyramid/tile105.png
 
-#begin textures/tiles/tile143.png
+#begin textures/tiles/pyramid/tile106.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -467,9 +467,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile143.png
+/build:textures/tiles/pyramid/tile106.png
 
-#begin textures/tiles/tile17.png
+#begin textures/tiles/pyramid/tile107.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -479,9 +479,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile17.png
+/build:textures/tiles/pyramid/tile107.png
 
-#begin textures/tiles/tile18.png
+#begin textures/tiles/pyramid/tile108.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -491,9 +491,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile18.png
+/build:textures/tiles/pyramid/tile108.png
 
-#begin textures/tiles/tile19.png
+#begin textures/tiles/pyramid/tile109.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -503,9 +503,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile19.png
+/build:textures/tiles/pyramid/tile109.png
 
-#begin textures/tiles/tile20.png
+#begin textures/tiles/pyramid/tile113.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -515,9 +515,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile20.png
+/build:textures/tiles/pyramid/tile113.png
 
-#begin textures/tiles/tile21.png
+#begin textures/tiles/pyramid/tile114.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -527,9 +527,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile21.png
+/build:textures/tiles/pyramid/tile114.png
 
-#begin textures/tiles/tile22.png
+#begin textures/tiles/pyramid/tile115.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -539,9 +539,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile22.png
+/build:textures/tiles/pyramid/tile115.png
 
-#begin textures/tiles/tile25.png
+#begin textures/tiles/pyramid/tile116.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -551,9 +551,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile25.png
+/build:textures/tiles/pyramid/tile116.png
 
-#begin textures/tiles/tile26.png
+#begin textures/tiles/pyramid/tile117.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -563,9 +563,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile26.png
+/build:textures/tiles/pyramid/tile117.png
 
-#begin textures/tiles/tile27.png
+#begin textures/tiles/pyramid/tile121.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -575,9 +575,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile27.png
+/build:textures/tiles/pyramid/tile121.png
 
-#begin textures/tiles/tile28.png
+#begin textures/tiles/pyramid/tile122.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -587,9 +587,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile28.png
+/build:textures/tiles/pyramid/tile122.png
 
-#begin textures/tiles/tile29.png
+#begin textures/tiles/pyramid/tile123.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -599,9 +599,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile29.png
+/build:textures/tiles/pyramid/tile123.png
 
-#begin textures/tiles/tile30.png
+#begin textures/tiles/pyramid/tile124.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -611,9 +611,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile30.png
+/build:textures/tiles/pyramid/tile124.png
 
-#begin textures/tiles/tile33.png
+#begin textures/tiles/pyramid/tile125.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -623,9 +623,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile33.png
+/build:textures/tiles/pyramid/tile125.png
 
-#begin textures/tiles/tile34.png
+#begin textures/tiles/pyramid/tile97.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -635,9 +635,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile34.png
+/build:textures/tiles/pyramid/tile97.png
 
-#begin textures/tiles/tile35.png
+#begin textures/tiles/pyramid/tile98.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -647,9 +647,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile35.png
+/build:textures/tiles/pyramid/tile98.png
 
-#begin textures/tiles/tile36.png
+#begin textures/tiles/pyramid/tile99.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -659,9 +659,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile36.png
+/build:textures/tiles/pyramid/tile99.png
 
-#begin textures/tiles/tile37.png
+#begin textures/tiles/temple/tile65.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -671,9 +671,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile37.png
+/build:textures/tiles/temple/tile65.png
 
-#begin textures/tiles/tile38.png
+#begin textures/tiles/temple/tile66.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -683,9 +683,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile38.png
+/build:textures/tiles/temple/tile66.png
 
-#begin textures/tiles/tile41.png
+#begin textures/tiles/temple/tile67.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -695,9 +695,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile41.png
+/build:textures/tiles/temple/tile67.png
 
-#begin textures/tiles/tile42.png
+#begin textures/tiles/temple/tile73.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -707,9 +707,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile42.png
+/build:textures/tiles/temple/tile73.png
 
-#begin textures/tiles/tile43.png
+#begin textures/tiles/temple/tile74.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -719,9 +719,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile43.png
+/build:textures/tiles/temple/tile74.png
 
-#begin textures/tiles/tile44.png
+#begin textures/tiles/temple/tile75.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -731,9 +731,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile44.png
+/build:textures/tiles/temple/tile75.png
 
-#begin textures/tiles/tile45.png
+#begin textures/tiles/temple/tile81.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -743,9 +743,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile45.png
+/build:textures/tiles/temple/tile81.png
 
-#begin textures/tiles/tile46.png
+#begin textures/tiles/temple/tile82.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -755,9 +755,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile46.png
+/build:textures/tiles/temple/tile82.png
 
-#begin textures/tiles/tile49.png
+#begin textures/tiles/temple/tile83.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -767,9 +767,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile49.png
+/build:textures/tiles/temple/tile83.png
 
-#begin textures/tiles/tile50.png
+#begin textures/tiles/temple/tile84.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -779,9 +779,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile50.png
+/build:textures/tiles/temple/tile84.png
 
-#begin textures/tiles/tile51.png
+#begin textures/tiles/temple/tile85.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -791,9 +791,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile51.png
+/build:textures/tiles/temple/tile85.png
 
-#begin textures/tiles/tile52.png
+#begin textures/tiles/temple/tile86.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -803,9 +803,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile52.png
+/build:textures/tiles/temple/tile86.png
 
-#begin textures/tiles/tile53.png
+#begin textures/tiles/temple/tile87.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -815,9 +815,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile53.png
+/build:textures/tiles/temple/tile87.png
 
-#begin textures/tiles/tile54.png
+#begin textures/tiles/temple/tile88.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -827,9 +827,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile54.png
+/build:textures/tiles/temple/tile88.png
 
-#begin textures/tiles/tile57.png
+#begin textures/tiles/temple/tile89.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -839,9 +839,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile57.png
+/build:textures/tiles/temple/tile89.png
 
-#begin textures/tiles/tile58.png
+#begin textures/tiles/temple/tile90.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -851,9 +851,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile58.png
+/build:textures/tiles/temple/tile90.png
 
-#begin textures/tiles/tile59.png
+#begin textures/tiles/temple/tile91.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -863,9 +863,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile59.png
+/build:textures/tiles/temple/tile91.png
 
-#begin textures/tiles/tile60.png
+#begin textures/tiles/temple/tile92.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -875,9 +875,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile60.png
+/build:textures/tiles/temple/tile92.png
 
-#begin textures/tiles/tile61.png
+#begin textures/tiles/temple/tile93.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -887,9 +887,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile61.png
+/build:textures/tiles/temple/tile93.png
 
-#begin textures/tiles/tile62.png
+#begin textures/tiles/temple/tile94.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -899,9 +899,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile62.png
+/build:textures/tiles/temple/tile94.png
 
-#begin textures/tiles/tile65.png
+#begin textures/tiles/temple/tile95.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -911,9 +911,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile65.png
+/build:textures/tiles/temple/tile95.png
 
-#begin textures/tiles/tile66.png
+#begin textures/tiles/dungeon/floor0.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -923,9 +923,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile66.png
+/build:textures/tiles/dungeon/floor0.png
 
-#begin textures/tiles/tile67.png
+#begin textures/tiles/dungeon/floor1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -935,9 +935,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile67.png
+/build:textures/tiles/dungeon/floor1.png
 
-#begin textures/tiles/tile73.png
+#begin textures/tiles/dungeon/floor10.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -947,9 +947,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile73.png
+/build:textures/tiles/dungeon/floor10.png
 
-#begin textures/tiles/tile74.png
+#begin textures/tiles/dungeon/floor11.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -959,9 +959,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile74.png
+/build:textures/tiles/dungeon/floor11.png
 
-#begin textures/tiles/tile75.png
+#begin textures/tiles/dungeon/floor2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -971,9 +971,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile75.png
+/build:textures/tiles/dungeon/floor2.png
 
-#begin textures/tiles/tile81.png
+#begin textures/tiles/dungeon/floor3.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -983,9 +983,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile81.png
+/build:textures/tiles/dungeon/floor3.png
 
-#begin textures/tiles/tile82.png
+#begin textures/tiles/dungeon/floor4.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -995,9 +995,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile82.png
+/build:textures/tiles/dungeon/floor4.png
 
-#begin textures/tiles/tile83.png
+#begin textures/tiles/dungeon/floor5.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1007,9 +1007,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile83.png
+/build:textures/tiles/dungeon/floor5.png
 
-#begin textures/tiles/tile84.png
+#begin textures/tiles/dungeon/floor6.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1019,9 +1019,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile84.png
+/build:textures/tiles/dungeon/floor6.png
 
-#begin textures/tiles/tile85.png
+#begin textures/tiles/dungeon/floor7.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1031,9 +1031,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile85.png
+/build:textures/tiles/dungeon/floor7.png
 
-#begin textures/tiles/tile86.png
+#begin textures/tiles/dungeon/floor8.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1043,9 +1043,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile86.png
+/build:textures/tiles/dungeon/floor8.png
 
-#begin textures/tiles/tile87.png
+#begin textures/tiles/dungeon/floor9.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1055,9 +1055,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile87.png
+/build:textures/tiles/dungeon/floor9.png
 
-#begin textures/tiles/tile88.png
+#begin textures/tiles/dungeon/wall0.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1067,9 +1067,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile88.png
+/build:textures/tiles/dungeon/wall0.png
 
-#begin textures/tiles/tile89.png
+#begin textures/tiles/dungeon/wall1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1079,9 +1079,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile89.png
+/build:textures/tiles/dungeon/wall1.png
 
-#begin textures/tiles/tile9.png
+#begin textures/tiles/dungeon/wall10.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1091,9 +1091,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile9.png
+/build:textures/tiles/dungeon/wall10.png
 
-#begin textures/tiles/tile90.png
+#begin textures/tiles/dungeon/wall11.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1103,9 +1103,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile90.png
+/build:textures/tiles/dungeon/wall11.png
 
-#begin textures/tiles/tile91.png
+#begin textures/tiles/dungeon/wall2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1115,9 +1115,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile91.png
+/build:textures/tiles/dungeon/wall2.png
 
-#begin textures/tiles/tile92.png
+#begin textures/tiles/dungeon/wall3.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1127,9 +1127,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile92.png
+/build:textures/tiles/dungeon/wall3.png
 
-#begin textures/tiles/tile93.png
+#begin textures/tiles/dungeon/wall4.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1139,9 +1139,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile93.png
+/build:textures/tiles/dungeon/wall4.png
 
-#begin textures/tiles/tile94.png
+#begin textures/tiles/dungeon/wall5.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1151,9 +1151,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile94.png
+/build:textures/tiles/dungeon/wall5.png
 
-#begin textures/tiles/tile95.png
+#begin textures/tiles/dungeon/wall6.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1163,9 +1163,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile95.png
+/build:textures/tiles/dungeon/wall6.png
 
-#begin textures/tiles/tile97.png
+#begin textures/tiles/dungeon/wall7.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1175,9 +1175,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile97.png
+/build:textures/tiles/dungeon/wall7.png
 
-#begin textures/tiles/tile98.png
+#begin textures/tiles/dungeon/wall8.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1187,9 +1187,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile98.png
+/build:textures/tiles/dungeon/wall8.png
 
-#begin textures/tiles/tile99.png
+#begin textures/tiles/dungeon/wall9.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1199,5 +1199,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:textures/tiles/tile99.png
+/build:textures/tiles/dungeon/wall9.png
 

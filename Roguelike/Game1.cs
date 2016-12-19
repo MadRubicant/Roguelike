@@ -77,15 +77,16 @@ namespace Roguelike {
             TileDefinition Floor = new TileDefinition();
             Floor.Blocks = false;
             Floor.ID = 1;
-            
-            Floor.Text = TextureDict["tile10"];
+            Floor.Theme = "dungeon";
+            Floor.Textures = new Texture2D[] { TextureDict["textures/tiles/dungeon/floor0"] };
             Tiles.TileDefs.Add(1, Floor);
 
             TileDefinition Wall = new TileDefinition();
             Wall.Blocks = true;
             Wall.ID = 0;
             Wall.Name = "wall";
-            Wall.Text = TextureDict["tile25"];
+            Wall.Theme = "dungeon";
+            Wall.Textures = new Texture2D[] { TextureDict["textures/tiles/dungeon/wall0"] };
             Tiles.TileDefs.Add(0, Wall);
 
             Player = new Actor(new Point(1, 1), PlayerTexture, true);
