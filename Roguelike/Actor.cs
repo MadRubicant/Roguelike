@@ -14,9 +14,10 @@ namespace Roguelike {
     public class Actor {
         public Point Position;
         public bool IsMobile;
+        public bool Blocks = true;
         public ActorAction Action;
         public Texture2D ActorSprite;
-
+        
         public Actor(Point Pos, Texture2D ActorSprite, bool Mobile) {
             this.Position = Pos;
             this.IsMobile = Mobile;

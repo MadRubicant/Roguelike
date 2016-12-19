@@ -18,6 +18,7 @@ namespace Roguelike {
         Texture2D WallTexture;
         Texture2D FloorTexture;
         Texture2D PlayerTexture;
+        Texture2D MonsterTexture;
         MainRenderer Renderer;
         GameWorld Tiles;
         Point MapSize = new Point(25);
@@ -56,15 +57,14 @@ namespace Roguelike {
         /// all of your content.
         /// </summary>
         protected override void LoadContent() {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             TextureDict = new TextureDictionary(Content);
             TextureDict.LoadAllTextures();
-            //TextureDict.SplitTexture("tile");
             
             WallTexture = CreateTexture(Color.DarkSlateGray, new Point(32, 32));
             FloorTexture = CreateTexture(Color.LightGray, new Point(32, 32));
             PlayerTexture = CreateTexture(Color.Red, new Point(32, 32));
+            MonsterTexture = CreateTexture(Color.Blue, new Point(32, 32));
             for (int i = 0; i < 20; i++) {
                 for (int j = 0; j < 20; j++) {
                     if (i == 0 || j == 0 || i == 19 || j == 19)
@@ -90,7 +90,9 @@ namespace Roguelike {
             Tiles.TileDefs.Add(0, Wall);
 
             Player = new Actor(new Point(1, 1), PlayerTexture, true);
-            Tiles.AddEntity(Player);
+            Actor Monster = new Actor(new Point(4, 4), MonsterTexture, true);
+            Tiles.AddActor(Monster);
+            Tiles.AddActor(Player);
             // TODO: use this.Content to load your game content here
             
 

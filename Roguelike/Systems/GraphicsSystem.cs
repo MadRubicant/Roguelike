@@ -24,7 +24,7 @@ namespace Roguelike {
                 }
             }
 
-            foreach (Actor A in Map.AllEntities) {
+            foreach (Actor A in Map.AllActors) {
                 Vector2 ActorLocation = A.Position.ToVector2() * TileScale + Offset - CameraOffset;
                 spriteBatch.Draw(A.ActorSprite, ActorLocation, Color.White);
             }

@@ -12,7 +12,7 @@ namespace Roguelike.Entities {
         public readonly Point Bounds;
 
         LinkedList<Actor>[,] ActorPositions;
-        HashSet<Actor> AllActiveEntities;
+        HashSet<Actor> AllActiveActors;
 
         readonly Actor[] EmptyList = { };
         int ActiveLists;   
@@ -20,15 +20,15 @@ namespace Roguelike.Entities {
 
         public Dictionary<int, TileDefinition> TileDefs { get; private set; }
 
-        public IEnumerable<Actor> AllEntities {
-            get { return AllActiveEntities; }
+        public IEnumerable<Actor> AllActors {
+            get { return AllActiveActors; }
         }
 
         public GameWorld(int width, int height) {
             TileGrid = new Tile[width, height];
             Bounds = new Point(width, height);
             ActorPositions = new LinkedList<Actor>[width, height];
-            AllActiveEntities = new HashSet<Actor>();
+            AllActiveActors = new HashSet<Actor>();
             ActiveLists = 0;
             InactiveLists = 0;
             TileDefs = new Dictionary<int, TileDefinition>();
@@ -39,7 +39,7 @@ namespace Roguelike.Entities {
         /// </summary>
         /// <param name="Pos">The tile position to check</param>
         /// <returns>A list of entities</returns>
-        public IEnumerable<Actor> EntitiesAt(Point Pos) {
+        public IEnumerable<Actor> ActorsAt(Point Pos) {
             if (!InBounds(Pos))
                 return EmptyList;
             if (ActorPositions[Pos.X, Pos.Y] == null)
@@ -51,7 +51,7 @@ namespace Roguelike.Entities {
         /// Adds the given <see cref="Entity"/> to the world
         /// </summary>
         /// <param name="Ent">The <see cref="Entity"/> to add</param>
-        public void AddEntity(Actor Ent) {
+        public void AddActor(Actor Ent) {
             Point Pos = Ent.Position;
             if (!InBounds(Pos))
                 return;
@@ -61,14 +61,14 @@ namespace Roguelike.Entities {
                 ActiveLists++;
             }
             ActorPositions[Pos.X, Pos.Y].AddFirst(Ent);
-            AllActiveEntities.Add(Ent);
+            AllActiveActors.Add(Ent);
         }
 
         /// <summary>
         /// Removes the given <see cref="Entity"/> from the world
         /// </summary>
         /// <param name="Ent">The <see cref="Entity"/> to remove</param>
-        public void RemoveEntity(Actor Ent) {
+        public void RemoveActor(Actor Ent) {
             Point Pos = Ent.Position;
             if (!InBounds(Pos))
                 return;
@@ -77,7 +77,7 @@ namespace Roguelike.Entities {
             }
 
             ActorPositions[Pos.X, Pos.Y].Remove(Ent);
-            AllActiveEntities.Remove(Ent);
+            AllActiveActors.Remove(Ent);
 
             if (ActorPositions[Pos.X, Pos.Y].Count == 0)
                 InactiveLists++;
@@ -93,8 +93,8 @@ namespace Roguelike.Entities {
         /// <param name="E">The <see cref="Actor"/> to move</param>
         /// <param name="Dest">The destination</param>
         /// <returns>True if the move was successful, false otherwise</returns>
-        public bool MoveEntity(Actor E, Point Dest) {
-            if (!InBounds(Dest))
+        public bool MoveActor(Actor E, Point Dest) {
+            if (!CanMoveTo(Dest))
                 return false;
             TileDefinition Def = TileDefs[this[Dest.X, Dest.Y].ID];
             if (Def.Blocks == true)
@@ -143,7 +143,18 @@ namespace Roguelike.Entities {
             InactiveLists = 0;
         }
 
+        private bool CanMoveTo(Point Pos) {
+            if (!InBounds(Pos))
+                return false;
+            var actors = ActorsAt(Pos);
+            foreach (Actor a in actors) {
+                if (a.Blocks == true)
+                    return false;
+            }
 
+            return true;
+
+        }
         private bool InBounds(Point Pos) {
             return (Pos.X >= 0 && Pos.X < Bounds.X && Pos.Y >= 0 && Pos.Y < Bounds.Y);                
         }
